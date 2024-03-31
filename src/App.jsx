@@ -1,18 +1,16 @@
-import './App.css'
+import { BrowserRouter as Router } from "react-router-dom";
+import { AppLayout } from "./layout/AppLayout";
+import RoutesComponent from "./router/RoutesComponent";
+import "./style.css";
 
 function App() {
-
   return (
-    <>
-      <div>
-
-      </div>
-      <h1>Planserm</h1>
-      <div className="card">
-      </div>
-   
-    </>
-  )
+    <Router>
+      <AppLayout>
+        <RoutesComponent />
+      </AppLayout>
+    </Router>
+  );
 }
 
-export default App
+export default App;

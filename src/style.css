@@ -1,0 +1,21 @@
+* {
+  /* height: 100%; */
+  margin: 0
+}
+
+.responsive-div {
+  width: 100%; /* Por defecto, ocupa todo el ancho disponible */
+  max-width: 600px; /* Establece un ancho máximo para evitar que se vuelva demasiado ancho en pantallas grandes */
+  margin: 0 auto; /* Centra el div horizontalmente */
+  background-color: lightblue;
+  padding: 20px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho del div */
+}
+
+/* Consulta de medios para hacer ajustes en el diseño en pantallas pequeñas */
+@media (max-width: 768px) {
+  .responsive-div {
+      padding: 10px; /* Cambia el padding en pantallas más pequeñas */
+  }
+}
+
