@@ -1,4 +1,6 @@
 import { FONT_COLORS, FONT_FAMILY } from "../../utils/utils";
+import { Location } from "./Footer/Location";
+import { FooterContact } from "./Footer/FooterContact";
 
 export default function Footer() {
   return (
@@ -19,6 +21,7 @@ export default function Footer() {
             paddingTop: "10px",
           }}
         >
+          <Location />
         </div>
         <div
           style={{
@@ -39,6 +42,7 @@ export default function Footer() {
             fontFamily: FONT_FAMILY.NOVA_FLAT,
           }}
         >
+          <FooterContact />
         </div>
       </div>
       <span
@@ -50,7 +54,7 @@ export default function Footer() {
           background: "rgb(220, 209, 238, 0.6)",
         }}
       >
-        Planserm 2024 - All rigths reserved
+        Planserm 2024 - All rigths reseved
       </span>
     </>
   );
