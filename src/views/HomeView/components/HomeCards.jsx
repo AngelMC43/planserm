@@ -20,7 +20,6 @@ export default function HomeCards() {
         marginTop: "3%",
         display: "flex",
         flexWrap: "wrap",
-        // justifyContent: "space-around",
       }}
     >
       {/* {cardData.map((i) => (
@@ -51,17 +50,14 @@ export default function HomeCards() {
         </Card>
       ))} */}
       {cardData.map((i) => (
-        <div style={{ width: "33%" }}>
+        <div style={{ width: "33%" }} key={i}>
           <div
             style={{
               position: "absolute",
               width: "23%",
               height: "41.5vh",
               border: "1.5px solid #d3d3d3",
-              // background: "rgb(220, 209, 238, 0.1)",
-              borderRadius: "1vw",
-              // padding: "45px",
-              // width: "33.3%",
+              borderRadius: "0.5vw",
               // background: `linear-gradient(to top, #1a0018 -20%, rgba(0,0,0,0) 50px)`,
               textAlign: "center",
               boxShadow: "0 3px 6px rgba(0, 0, 0, 0.3)",
@@ -86,10 +82,10 @@ export default function HomeCards() {
             sx={{
               height: "38vh",
               // width: "30.7%",
-              // transition: "1s",
-              borderRadius: "1vw",
+              transition: "0.5s",
+              borderRadius: "0.5vw",
               "&:hover": {
-                transform: "scaleX(-1)",
+                // transform: "scaleX(-1)",
                 background: "red",
                 opacity: 0,
               },
