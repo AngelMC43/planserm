@@ -15,8 +15,8 @@ const ipsumText =
 
 export const cardData = [
   { title: "Abrillantado de suelos", text: ipsumText, image: abrillantadora },
-  { title: "Jardineria", text: ipsumText, image: jardineria },
-  { title: "Tratamieno de piscinas", text: ipsumText, image: piscina },
+  { title: "Jardinería", text: ipsumText, image: jardineria },
+  { title: "Tratamiento de piscinas", text: ipsumText, image: piscina },
   { title: "Limpieza oficinas", text: ipsumText, image: oficina },
   { title: "Limpieza edificios", text: ipsumText, image: edificio },
   { title: "Limpieza garajes", text: ipsumText, image: garaje },
