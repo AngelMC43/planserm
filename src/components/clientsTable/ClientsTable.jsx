@@ -3,7 +3,13 @@ import { ReactTabulator } from "react-tabulator";
 export const ClientsTable = ({ columns, data }) => {
   return (
     <div>
-      <ReactTabulator columns={columns} data={data} />
+      <div id="example-table"></div>
+      <ReactTabulator
+        resizableColumnFit={true}
+        columns={columns}
+        data={data}
+        layout="fitColumns"
+      />
     </div>
   );
 };
