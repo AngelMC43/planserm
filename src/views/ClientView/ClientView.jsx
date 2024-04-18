@@ -16,11 +16,11 @@ export default function CLientView() {
         marginTop: "3%",
       }}
     >
-      <div>hola</div>
+      <div></div>
       <div>
         <ClientsTable columns={columns} data={data} />
       </div>
-      <div>hola</div>
+      <div></div>
     </div>
   );
 }
