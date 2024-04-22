@@ -2,14 +2,19 @@ import { ReactTabulator } from "react-tabulator";
 import { styleClienTable } from "./styleClienTable";
 
 export const ClientsTable = ({ columns, data }) => {
+  const options = {
+    layout: "fitColumns",
+    rowHeight: 50,
+    // persistence: false,
+  };
   return (
     <div>
       <ReactTabulator
         resizableColumnFit={true}
         columns={columns}
         data={data}
-        layout="fitColumns"
         style={styleClienTable.tableContainer}
+        options={options}
       />
     </div>
   );
