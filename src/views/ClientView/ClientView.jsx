@@ -7,29 +7,10 @@ import { FONT_FAMILY } from "../../utils/utils";
 import { useGetClients } from "../../hooks/api/useGetClients";
 import { styleClientView } from "./styleClientView";
 import AddModal from "./components/AddModal";
-
-const initialClientTemplate = {
-  Comunidad: "",
-  Presidente: "",
-  Direccion: "",
-  Municipio: "",
-  Servicios: "",
-  TelefonoContacto: "",
-  DomicilioPresidente: "",
-};
-
-const addInputs = [
-  { name: "Comunidad", type: "text" },
-  { name: "Presidente", type: "text" },
-  { name: "Dirección", type: "text" },
-  { name: "Municipio", type: "text" },
-  { name: "Teléfono de contacto", type: "text" },
-  { name: "Domicilio presidente", type: "text" },
-  { name: "Servicios", type: "select" },
-];
+import { addInputs, initialClientTemplate } from "./utils";
 
 export default function CLientView() {
-  const { data } = useGetClients();
+  const { data: clientsData } = useGetClients();
 
   const [openModalAdd, setOpenModalAdd] = useState(false);
 
@@ -56,7 +37,7 @@ export default function CLientView() {
         </div>
         <div style={styleClientView.tableContainer}>
           <div style={styleClientView.tableSize}>
-            <ClientsTable columns={columns} data={data} />
+            <ClientsTable columns={columns} data={clientsData} />
           </div>
         </div>
       </div>

@@ -12,4 +12,5 @@ export const FONT_COLORS = {
 
 export const appRoutes = {
   HOME: "/",
+  CLIENTS: "clients",
 };
