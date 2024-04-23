@@ -1,3 +1,4 @@
+import { useState } from "react";
 import useSWR from "swr";
 import { ClientsTable } from "../../components/clientsTable/ClientsTable";
 import { columns } from "../../components/clientsTable/columns";
@@ -15,7 +16,6 @@ import {
 import Button from "@mui/material/Button";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { FONT_FAMILY } from "../../utils/utils";
-import { useState } from "react";
 
 const initialClientTemplate = {
   Comunidad: "",
@@ -131,9 +131,10 @@ export default function CLientView() {
             Añade una nueva comunidad
           </Typography>
           {addInput.map((i) => (
-            <>
+            <div key={i.name}>
               {i.type === "text" ? (
                 <TextField
+                  key={i.name}
                   label={i.name}
                   variant="standard"
                   onChange={(e) => setNewClient(e.target.value)}
@@ -158,7 +159,7 @@ export default function CLientView() {
                   </FormControl>
                 </>
               )}
-            </>
+            </div>
           ))}
 
           <div>
