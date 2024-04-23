@@ -1,5 +1,5 @@
 import { ReactTabulator } from "react-tabulator";
-import { styleClienTable } from "./styleClienTable";
+import { styleClienTable } from "./styleClientTable";
 
 export const ClientsTable = ({ columns, data }) => {
   const options = {
