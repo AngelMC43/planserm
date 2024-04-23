@@ -21,26 +21,32 @@
 
 /* TABULATOR */
 
-/* Estilo de las celdas */
+.tabulator {
+  background: #e9f5fa;
+}
 .tabulator-table {
-  background-color: #e5e1fd !important;
+  background-color: #e5e1fd;
+  font-size: medium;
 }
 
 .tabulator-cell {
   padding: 8px;
+  border-right: none !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/* Estilo de las filas alternas */
 .tabulator-row.tabulator-row-odd {
   background-color: #e9f5fa;
 }
 
-/* Estilo del encabezado de la columna */
-
+.tabulator-col-tabulator-sortable-tabulator-col-sorter-element {
+  background-color: red;
+}
 .tabulator-col {
   color: #525252;
+  background-color: #e5e1fd;
+  border-right: none !important;
   font-weight: bold;
   font-size: large;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -51,8 +57,20 @@
   background-color: #e5e1fd;
 }
 
+.tabulator-header-hidden {
+  background: red;
+}
+.tabulator-header {
+  background: red;
+}
+
+.tabulator-col-resize-handle {
+  display: none !important;
+}
+
 .tabulator-header-filter {
-  background-color: #e5e1fd;
+  /* background-color: #a82074; */
+  border: none;
 }
 
 .tabulator-row {

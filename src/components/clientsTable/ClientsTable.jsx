@@ -5,8 +5,12 @@ export const ClientsTable = ({ columns, data }) => {
   const options = {
     layout: "fitColumns",
     rowHeight: 50,
+    persistence: {
+      headerFilter: true,
+    },
     // persistence: false,
   };
+
   return (
     <div>
       <ReactTabulator

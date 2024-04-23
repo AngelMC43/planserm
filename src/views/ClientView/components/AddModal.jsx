@@ -11,13 +11,27 @@ import {
 } from "@mui/material";
 import { FONT_FAMILY } from "../../../utils/utils";
 import { boxMUIStyle } from "../styleClientView";
+import { useGetClients } from "../../../hooks/api/useGetClients";
 
 export default function AddModal({
   openModalAdd,
   setOpenModalAdd,
   setNewClient,
   addInputs,
+  newClient,
+  createNewClient,
 }) {
+  const handleChange = (e, name) => {
+    setNewClient({
+      ...newClient,
+      [name]: e.target.value,
+    });
+  };
+
+  const handleAdd = async () => {
+    createNewClient(newClient), setOpenModalAdd(false), await useGetClients();
+  };
+
   return (
     <Modal
       open={openModalAdd}
@@ -34,14 +48,14 @@ export default function AddModal({
         >
           Añade una nueva comunidad
         </Typography>
-        {addInputs.map((i) => (
-          <div key={i.name}>
+        {addInputs.map((i, index) => (
+          <div key={index}>
             {i.type === "text" ? (
               <TextField
-                key={i.name}
-                label={i.name}
+                key={index}
+                label={i.title}
                 variant="standard"
-                onChange={(e) => setNewClient(e.target.value)}
+                onChange={(e) => handleChange(e, i.name)}
               />
             ) : (
               <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
@@ -52,12 +66,12 @@ export default function AddModal({
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
                   value={"age"}
-                  onChange={() => {}}
+                  onChange={(e) => handleChange(e, i.name)}
                   label="Age"
                 >
-                  <MenuItem value={10}>Jardineria</MenuItem>
-                  <MenuItem value={20}>Garaje</MenuItem>
-                  <MenuItem value={30}>Piscina</MenuItem>
+                  <MenuItem value={"Jardineria"}>Jardineria</MenuItem>
+                  <MenuItem value={"Garaje"}>Garaje</MenuItem>
+                  <MenuItem value={"Piscina"}>Piscina</MenuItem>
                 </Select>
               </FormControl>
             )}
@@ -65,7 +79,7 @@ export default function AddModal({
         ))}
 
         <div>
-          <Button onClick={() => setOpenModalAdd(false)} variant="outlined">
+          <Button onClick={handleAdd} variant="outlined">
             Añadir
           </Button>
         </div>

@@ -8,13 +8,15 @@ import { useGetClients } from "../../hooks/api/useGetClients";
 import { styleClientView } from "./styleClientView";
 import AddModal from "./components/AddModal";
 import { addInputs, initialClientTemplate } from "./utils";
+import { createNewClient } from "../../hooks/api/useGetClients";
 
 export default function CLientView() {
-  const { data: clientsData } = useGetClients();
+  const { data: clientsData, responseData } = useGetClients();
 
   const [openModalAdd, setOpenModalAdd] = useState(false);
 
-  const [newClient, setNewClient] = useState(initialClientTemplate);
+  const [newClient, setNewClient] = useState({});
+  console.log("🚀 ~ CLientView ~ newClient:", newClient);
 
   return (
     <div style={styleClientView.mainContainer}>
@@ -26,9 +28,7 @@ export default function CLientView() {
               Añadir
               <IconButton
                 color="secondary"
-                onClick={() => {
-                  setOpenModalAdd(true);
-                }}
+                onClick={() => setOpenModalAdd(true)}
               >
                 <AddCircleIcon fontSize="large" />
               </IconButton>
@@ -46,6 +46,8 @@ export default function CLientView() {
         setOpenModalAdd={setOpenModalAdd}
         setNewClient={setNewClient}
         addInputs={addInputs}
+        newClient={newClient}
+        createNewClient={() => createNewClient(newClient)}
       />
     </div>
   );
