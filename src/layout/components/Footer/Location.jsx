@@ -82,7 +82,7 @@ export const Location = () => {
           Limpieza
           <br />
           Mantenimiento
-          <br /> Abrillantado <br /> Jardineria <br /> Pintura
+          <br /> Abrillantado <br /> Jardinería <br /> Pintura
         </div>
       </div>
       <div

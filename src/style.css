@@ -1,6 +1,6 @@
 * {
   /* height: 100%; */
-  margin: 0
+  margin: 0;
 }
 
 .responsive-div {
@@ -15,7 +15,46 @@
 /* Consulta de medios para hacer ajustes en el diseño en pantallas pequeñas */
 @media (max-width: 768px) {
   .responsive-div {
-      padding: 10px; /* Cambia el padding en pantallas más pequeñas */
+    padding: 10px; /* Cambia el padding en pantallas más pequeñas */
   }
 }
 
+/* TABULATOR */
+
+/* Estilo de las celdas */
+.tabulator-table {
+  background-color: #e5e1fd !important;
+}
+
+.tabulator-cell {
+  padding: 8px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Estilo de las filas alternas */
+.tabulator-row.tabulator-row-odd {
+  background-color: #e9f5fa;
+}
+
+/* Estilo del encabezado de la columna */
+
+.tabulator-col {
+  color: #525252;
+  font-weight: bold;
+  font-size: large;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.tabulator-col-content {
+  background-color: #e5e1fd;
+}
+
+.tabulator-header-filter {
+  background-color: #e5e1fd;
+}
+
+.tabulator-row {
+  background-color: #e5e1fd;
+}
