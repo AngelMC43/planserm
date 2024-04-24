@@ -1,41 +1,10 @@
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import logo from "../../images/logo-white-sin.png";
-import { FONT_COLORS } from "../../utils/utils";
-const pages = ["Servicios", "Presupuesto", "Contáctanos", "Sobre nosotros"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+const tabs = ["Servicios", "Presupuesto", "Contáctanos", "Sobre nosotros"];
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
     <div
       style={{
@@ -82,7 +51,8 @@ function ResponsiveAppBar() {
           style={{
             display: "flex",
             height: "25%",
-            width: "94%",
+            width: "90%",
+            marginLeft: "3%",
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
             backgroundColor: "rgb(220 209 238)",
@@ -90,8 +60,8 @@ function ResponsiveAppBar() {
             fontWeight: "bolder",
           }}
         >
-          {pages.map((page) => (
-            <MenuItem key={page} onClick={handleCloseNavMenu}>
+          {tabs.map((page) => (
+            <MenuItem key={page}>
               <Typography
                 textAlign="center"
                 style={{ fontWeight: "bolder", fontSize: "16px" }}
@@ -102,13 +72,6 @@ function ResponsiveAppBar() {
           ))}
         </div>
       </div>
-      <div
-        style={{
-          width: "1.2%",
-          height: "100%",
-          background: FONT_COLORS.YELLOW,
-        }}
-      ></div>
     </div>
   );
 }

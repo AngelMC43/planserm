@@ -11,7 +11,6 @@ import {
 } from "@mui/material";
 import { FONT_FAMILY } from "../../../utils/utils";
 import { boxMUIStyle } from "../styleClientView";
-import { useGetClients } from "../../../hooks/api/useGetClients";
 
 export default function AddModal({
   openModalAdd,
@@ -29,7 +28,7 @@ export default function AddModal({
   };
 
   const handleAdd = async () => {
-    createNewClient(newClient), setOpenModalAdd(false), await useGetClients();
+    createNewClient(newClient), setOpenModalAdd(false);
   };
 
   return (

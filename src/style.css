@@ -20,59 +20,62 @@
 }
 
 /* TABULATOR */
-
 .tabulator {
-  background: #e9f5fa;
+  background: #f1feff;
 }
+
 .tabulator-table {
-  background-color: #e5e1fd;
   font-size: medium;
 }
 
 .tabulator-cell {
-  padding: 8px;
   border-right: none !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.tabulator .tabulator-header {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.tabulator-row.tabulator-row {
+  background-color: #d3f6fa;
 }
 
 .tabulator-row.tabulator-row-odd {
-  background-color: #e9f5fa;
+  background-color: #f1feff;
 }
 
-.tabulator-col-tabulator-sortable-tabulator-col-sorter-element {
-  background-color: red;
-}
 .tabulator-col {
   color: #525252;
-  background-color: #e5e1fd;
   border-right: none !important;
   font-weight: bold;
-  font-size: large;
+  font-size: medium;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-.tabulator-col-content {
-  background-color: #e5e1fd;
-}
-
-.tabulator-header-hidden {
-  background: red;
-}
-.tabulator-header {
-  background: red;
 }
 
 .tabulator-col-resize-handle {
   display: none !important;
 }
 
-.tabulator-header-filter {
-  /* background-color: #a82074; */
-  border: none;
+/* SCROLL BAR */
+
+body::-webkit-scrollbar {
+  width: 8px;
 }
 
-.tabulator-row {
-  background-color: #e5e1fd;
+body::-webkit-scrollbar-thumb {
+  background: #916e9b;
+}
+
+::-webkit-scrollbar {
+  width: 7px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #907ca3;
+  border-radius: 5px !important;
 }

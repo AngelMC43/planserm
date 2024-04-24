@@ -1,3 +1,5 @@
+import { FONT_COLORS, FONT_FAMILY } from "../../utils/utils";
+
 export const styleClientView = {
   mainContainer: {
     display: "flex",
@@ -5,7 +7,7 @@ export const styleClientView = {
     height: "81vh",
   },
   borderContainer: {
-    border: "2px solid #a7a7a7",
+    border: "1px solid grey",
     borderRadius: "6vh",
     width: "75%",
     marginTop: "3%",
@@ -18,15 +20,19 @@ export const styleClientView = {
     justifyContent: "space-between",
     width: "95%",
   },
-  title: (FONT_FAMILY) => ({ fontSize: "2vw", fontFamily: FONT_FAMILY.MADIMI }),
-  addIcon: (FONT_FAMILY) => ({
-    fontSize: "1.5vw",
+  title: {
+    fontSize: "2vw",
+    color: FONT_COLORS.ICONS,
     fontFamily: FONT_FAMILY.MADIMI,
-  }),
-  tableContainer: { display: "flex", justifyContent: "center" },
-  tableSize: {
-    width: "96%",
-    marginTop: "2%",
+  },
+  addIcon: {
+    fontSize: "1.5vw",
+    color: FONT_COLORS.ICONS,
+    fontFamily: FONT_FAMILY.MADIMI,
+  },
+  tableContainer: {
+    display: "flex",
+    justifyContent: "center",
   },
 };
 
@@ -45,9 +51,10 @@ export const boxMUIStyle = {
 
 export const styleClientTable = {
   tableContainer: {
+    marginTop: "2%",
     borderRadius: "3vh",
     minHeight: "58vh",
+    maxHeight: "58vh",
     overflow: "auto",
-    maxHeight: "30vh",
   },
 };
