@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ClientsTable } from "../../components/clientsTable/ClientsTable";
-import { columns } from "../../components/clientsTable/columns";
+import { ClientsTable } from "./components/ClientsTable";
+import { columns } from "./components/columns";
 import { IconButton } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { FONT_FAMILY } from "../../utils/utils";

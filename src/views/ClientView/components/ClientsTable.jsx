@@ -1,5 +1,5 @@
 import { ReactTabulator } from "react-tabulator";
-import { styleClienTable } from "./styleClientTable";
+import { styleClientTable } from "../styleClientView";
 
 export const ClientsTable = ({ columns, data }) => {
   const options = {
@@ -17,7 +17,7 @@ export const ClientsTable = ({ columns, data }) => {
         resizableColumnFit={true}
         columns={columns}
         data={data}
-        style={styleClienTable.tableContainer}
+        style={styleClientTable.tableContainer}
         options={options}
       />
     </div>

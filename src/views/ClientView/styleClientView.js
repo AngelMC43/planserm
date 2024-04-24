@@ -42,3 +42,12 @@ export const boxMUIStyle = {
   boxShadow: 24,
   p: 4,
 };
+
+export const styleClientTable = {
+  tableContainer: {
+    borderRadius: "3vh",
+    minHeight: "58vh",
+    overflow: "auto",
+    maxHeight: "30vh",
+  },
+};
