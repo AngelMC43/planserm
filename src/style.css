@@ -21,11 +21,12 @@
 
 /* TABULATOR */
 .tabulator {
-  background: #f1feff;
+  background: #f1feff !important;
 }
 
 .tabulator-table {
   font-size: medium;
+  background-color: #e5e1fd !important;
 }
 
 .tabulator-cell {
@@ -36,8 +37,7 @@
 
 .tabulator .tabulator-header {
   position: sticky;
-  top: 0;
-  z-index: 9;
+  /* top: 0; */
 }
 
 .tabulator-row.tabulator-row {
@@ -57,9 +57,24 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+.tabulator .tabulator-header .tabulator-col .tabulator-header-filter input {
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+}
+
+.tabulator-col-content {
+  background-color: #e5e1fd;
+  height: 60px;
+}
+
 .tabulator-col-resize-handle {
   display: none !important;
 }
+
+/* .tabulator-header-filter {
+  background: red;
+} */
 
 /* SCROLL BAR */
 

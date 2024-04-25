@@ -9,6 +9,7 @@ export const FONT_COLORS = {
   ICONS: "#75587c",
   YELLOW: "#cfdd23",
   GREY: "#676667",
+  LIGTH_GREY: "#898989",
 };
 
 export const appRoutes = {

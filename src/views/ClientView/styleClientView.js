@@ -11,6 +11,8 @@ export const styleClientView = {
     borderRadius: "6vh",
     width: "75%",
     marginTop: "3%",
+    background: "#f0f0f0",
+    boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.2)",
   },
   marginContainer: {
     margin: "3% 0 0 5%",
@@ -36,6 +38,17 @@ export const styleClientView = {
   },
 };
 
+export const styleClientTable = {
+  tableContainer: {
+    marginTop: "2%",
+    borderRadius: "3vh",
+    minHeight: "58vh",
+    maxHeight: "58vh",
+    overflow: "auto",
+    boxShadow: "4px 4px 4px  rgba(0, 0, 0, 0.2)",
+  },
+};
+
 export const boxMUIStyle = {
   position: "absolute",
   top: "50%",
@@ -47,14 +60,4 @@ export const boxMUIStyle = {
   borderRadius: "5vh",
   boxShadow: 24,
   p: 4,
-};
-
-export const styleClientTable = {
-  tableContainer: {
-    marginTop: "2%",
-    borderRadius: "3vh",
-    minHeight: "58vh",
-    maxHeight: "58vh",
-    overflow: "auto",
-  },
 };

@@ -14,6 +14,6 @@ export async function createNewClient(body) {
     await axios.post("/api/clients", body);
     mutate(`/api/${appRoutes.CLIENTS}`);
   } catch (error) {
-    console.error("Error al enviar la solicitud POST:", error);
+    console.error(error);
   }
 }

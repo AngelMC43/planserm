@@ -43,6 +43,7 @@ export default function CLientView() {
         addInputs={addInputs}
         newClient={newClient}
         createNewClient={() => createNewClient(newClient)}
+        clientsData={clientsData}
       />
     </div>
   );
