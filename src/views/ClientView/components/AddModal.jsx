@@ -1,4 +1,5 @@
 import {
+  Alert,
   Box,
   Button,
   FormControl,
@@ -9,8 +10,9 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { FONT_FAMILY } from "../../../utils/utils";
+import { FONT_COLORS, FONT_FAMILY } from "../../../utils/utils";
 import { boxMUIStyle } from "../styleClientView";
+import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 
 export default function AddModal({
   openModalAdd,
@@ -19,7 +21,12 @@ export default function AddModal({
   addInputs,
   newClient,
   createNewClient,
+  clientsData,
 }) {
+  const checkSimilarAdd = clientsData
+    ?.map((i) => i.comunidad === newClient.comunidad)
+    .includes(true);
+
   const handleChange = (e, name) => {
     setNewClient({
       ...newClient,
@@ -27,9 +34,26 @@ export default function AddModal({
     });
   };
 
+  const isEmptyNewClient =
+    !!newClient.comunidad &&
+    !!newClient.presidente &&
+    !!newClient.direccion &&
+    !!newClient.municipio &&
+    !!newClient.telefono_contacto &&
+    !!newClient.domicilio_presidente &&
+    !!newClient.servicios;
+
+  console.log(isEmptyNewClient);
+
   const handleAdd = async () => {
     createNewClient(newClient), setOpenModalAdd(false);
   };
+
+  const ServicesOptions = [
+    { name: "Jardineria" },
+    { name: "Garaje" },
+    { name: "Piscina" },
+  ];
 
   return (
     <Modal
@@ -47,38 +71,73 @@ export default function AddModal({
         >
           Añade una nueva comunidad
         </Typography>
-        {addInputs.map((i, index) => (
-          <div key={index}>
-            {i.type === "text" ? (
-              <TextField
-                key={index}
-                label={i.title}
-                variant="standard"
-                onChange={(e) => handleChange(e, i.name)}
-              />
-            ) : (
-              <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                <InputLabel id="demo-simple-select-standard-label">
-                  Servicios
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-standard-label"
-                  id="demo-simple-select-standard"
-                  value={"age"}
-                  onChange={(e) => handleChange(e, i.name)}
-                  label="Age"
-                >
-                  <MenuItem value={"Jardineria"}>Jardineria</MenuItem>
-                  <MenuItem value={"Garaje"}>Garaje</MenuItem>
-                  <MenuItem value={"Piscina"}>Piscina</MenuItem>
-                </Select>
-              </FormControl>
-            )}
-          </div>
-        ))}
+        {checkSimilarAdd && (
+          <Alert
+            sx={{ m: 2, transition: "transform 1.5s" }}
+            icon={<WarningAmberIcon fontSize="inherit" />}
+            severity="warning"
+          >
+            La comunidad introducida ya existe en la base de datos.
+          </Alert>
+        )}
 
-        <div>
-          <Button onClick={handleAdd} variant="outlined">
+        <div
+          style={{
+            marginTop: "4%",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 20,
+            paddingLeft: "5%",
+          }}
+        >
+          {addInputs.map((i, index) => (
+            <div style={{ width: "100%" }}>
+              {i.type === "text" ? (
+                <TextField
+                  key={index}
+                  label={i.title}
+                  variant="standard"
+                  onChange={(e) => handleChange(e, i.name)}
+                  sx={{ width: "80%" }}
+                />
+              ) : (
+                <FormControl variant="standard" sx={{ width: "80%" }}>
+                  <InputLabel id="demo-simple-select-standard-label">
+                    Servicios
+                  </InputLabel>
+                  <Select
+                    value={newClient.servicios}
+                    onChange={(e) => handleChange(e, i.name)}
+                  >
+                    {ServicesOptions.map((i) => (
+                      <MenuItem key={i.name} value={i.name}>
+                        {i.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              )}
+            </div>
+          ))}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            marginRight: "6%",
+            borderTop: `1px solid ${FONT_COLORS.LIGTH_GREY}`,
+            marginLeft: "2%",
+            marginTop: "7%",
+            width: "96%",
+          }}
+        >
+          <Button
+            onClick={handleAdd}
+            disabled={!isEmptyNewClient | checkSimilarAdd}
+            variant="contained"
+            color="secondary"
+            style={{ marginTop: "3%" }}
+          >
             Añadir
           </Button>
         </div>
