@@ -1,3 +1,6 @@
+// import { styleColumns } from "../styleClientView";
+import "./columnsStyle.css";
+
 const printIcon = function (cell, formatterParams, onRendered) {
   return "<i class=ri-delete-bin-6-line></i>";
 };
@@ -17,6 +20,7 @@ export const columns = [
     title: "Comunidad",
     field: "comunidad",
     vertAlign: "middle",
+    cssClass: "styleColumns",
   },
 
   {

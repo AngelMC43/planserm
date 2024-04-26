@@ -2,6 +2,7 @@ import {
   Alert,
   Box,
   Button,
+  Chip,
   FormControl,
   InputLabel,
   MenuItem,
@@ -17,9 +18,9 @@ import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 export default function AddModal({
   openModalAdd,
   setOpenModalAdd,
+  newClient,
   setNewClient,
   addInputs,
-  newClient,
   createNewClient,
   clientsData,
 }) {
@@ -43,17 +44,11 @@ export default function AddModal({
     !!newClient.domicilio_presidente &&
     !!newClient.servicios;
 
-  console.log(isEmptyNewClient);
-
   const handleAdd = async () => {
     createNewClient(newClient), setOpenModalAdd(false);
   };
 
-  const ServicesOptions = [
-    { name: "Jardineria" },
-    { name: "Garaje" },
-    { name: "Piscina" },
-  ];
+  const ServicesOptions = ["Jardineria", "Garaje", "Piscina"];
 
   return (
     <Modal
@@ -106,12 +101,20 @@ export default function AddModal({
                     Servicios
                   </InputLabel>
                   <Select
-                    value={newClient.servicios}
+                    // multiple
+                    value={newClient?.servicios}
                     onChange={(e) => handleChange(e, i.name)}
+                    // renderValue={(selected) => (
+                    //   <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                    //     {selected.map((value) => (
+                    //       <Chip key={value} label={value} />
+                    //     ))}
+                    //   </Box>
+                    // )}
                   >
                     {ServicesOptions.map((i) => (
-                      <MenuItem key={i.name} value={i.name}>
-                        {i.name}
+                      <MenuItem key={i} value={i}>
+                        {i}
                       </MenuItem>
                     ))}
                   </Select>

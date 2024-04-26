@@ -3,7 +3,7 @@ export const initialClientTemplate = {
   presidente: "",
   direccion: "",
   municipio: "",
-  servicios: "",
+  servicios: [],
   telefono_contacto: 0,
   domicilio_presidente: "",
 };

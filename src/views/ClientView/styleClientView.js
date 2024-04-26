@@ -61,3 +61,8 @@ export const boxMUIStyle = {
   boxShadow: 24,
   p: 4,
 };
+
+export const styleColumns = {
+  fontWeight: "bolder",
+  background: "red !important",
+};

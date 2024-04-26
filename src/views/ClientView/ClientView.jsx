@@ -5,7 +5,7 @@ import { IconButton } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { styleClientView } from "./styleClientView";
 import AddModal from "./components/AddModal";
-import { addInputs } from "./utils";
+import { addInputs, initialClientTemplate } from "./utils";
 import useAppContext from "../../hooks/contexts/useAppContext";
 
 export default function CLientView() {
@@ -13,7 +13,16 @@ export default function CLientView() {
 
   const [openModalAdd, setOpenModalAdd] = useState(false);
 
-  const [newClient, setNewClient] = useState({});
+  const [newClient, setNewClient] = useState({
+    comunidad: "",
+    presidente: "",
+    direccion: "",
+    municipio: "",
+    servicios: [],
+    telefono_contacto: 0,
+    domicilio_presidente: "",
+  });
+  console.log("🚀 ~ CLientView ~ newClient:", newClient);
 
   return (
     <div style={styleClientView.mainContainer}>
