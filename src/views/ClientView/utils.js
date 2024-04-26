@@ -1,19 +1,19 @@
 export const initialClientTemplate = {
-  Comunidad: "",
-  Presidente: "",
-  Direccion: "",
-  Municipio: "",
-  Servicios: "",
-  TelefonoContacto: "",
-  DomicilioPresidente: "",
+  comunidad: "",
+  presidente: "",
+  direccion: "",
+  municipio: "",
+  servicios: [],
+  telefono_contacto: 0,
+  domicilio_presidente: "",
 };
 
 export const addInputs = [
-  { name: "Comunidad", type: "text" },
-  { name: "Presidente", type: "text" },
-  { name: "Dirección", type: "text" },
-  { name: "Municipio", type: "text" },
-  { name: "Teléfono de contacto", type: "text" },
-  { name: "Domicilio presidente", type: "text" },
-  { name: "Servicios", type: "select" },
+  { title: "Comunidad", type: "text", name: "comunidad" },
+  { title: "Presidente", type: "text", name: "presidente" },
+  { title: "Dirección", type: "text", name: "direccion" },
+  { title: "Municipio", type: "text", name: "municipio" },
+  { title: "Teléfono de contacto", type: "text", name: "telefono_contacto" },
+  { title: "Domicilio presidente", type: "text", name: "domicilio_presidente" },
+  { title: "Servicios", type: "select", name: "servicios" },
 ];

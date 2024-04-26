@@ -1,3 +1,5 @@
+import { FONT_COLORS, FONT_FAMILY } from "../../utils/utils";
+
 export const styleClientView = {
   mainContainer: {
     display: "flex",
@@ -5,10 +7,12 @@ export const styleClientView = {
     height: "81vh",
   },
   borderContainer: {
-    border: "2px solid #a7a7a7",
+    border: "1px solid grey",
     borderRadius: "6vh",
     width: "75%",
     marginTop: "3%",
+    background: "#f0f0f0",
+    boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.2)",
   },
   marginContainer: {
     margin: "3% 0 0 5%",
@@ -18,15 +22,30 @@ export const styleClientView = {
     justifyContent: "space-between",
     width: "95%",
   },
-  title: (FONT_FAMILY) => ({ fontSize: "2vw", fontFamily: FONT_FAMILY.MADIMI }),
-  addIcon: (FONT_FAMILY) => ({
-    fontSize: "1.5vw",
+  title: {
+    fontSize: "2vw",
+    color: FONT_COLORS.ICONS,
     fontFamily: FONT_FAMILY.MADIMI,
-  }),
-  tableContainer: { display: "flex", justifyContent: "center" },
-  tableSize: {
-    width: "96%",
+  },
+  addIcon: {
+    fontSize: "1.5vw",
+    color: FONT_COLORS.ICONS,
+    fontFamily: FONT_FAMILY.MADIMI,
+  },
+  tableContainer: {
+    display: "flex",
+    justifyContent: "center",
+  },
+};
+
+export const styleClientTable = {
+  tableContainer: {
     marginTop: "2%",
+    borderRadius: "3vh",
+    minHeight: "58vh",
+    maxHeight: "58vh",
+    overflow: "auto",
+    boxShadow: "4px 4px 4px  rgba(0, 0, 0, 0.2)",
   },
 };
 
@@ -41,4 +60,9 @@ export const boxMUIStyle = {
   borderRadius: "5vh",
   boxShadow: 24,
   p: 4,
+};
+
+export const styleColumns = {
+  fontWeight: "bolder",
+  background: "red !important",
 };

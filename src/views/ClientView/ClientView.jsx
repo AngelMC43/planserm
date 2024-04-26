@@ -1,34 +1,40 @@
 import { useState } from "react";
-import { ClientsTable } from "../../components/clientsTable/ClientsTable";
-import { columns } from "../../components/clientsTable/columns";
+import { ClientsTable } from "./components/ClientsTable";
+import { columns } from "./components/columns";
 import { IconButton } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { FONT_FAMILY } from "../../utils/utils";
-import { useGetClients } from "../../hooks/api/useGetClients";
 import { styleClientView } from "./styleClientView";
 import AddModal from "./components/AddModal";
 import { addInputs, initialClientTemplate } from "./utils";
+import useAppContext from "../../hooks/contexts/useAppContext";
 
 export default function CLientView() {
-  const { data: clientsData } = useGetClients();
+  const { clientsData, createNewClient } = useAppContext();
 
   const [openModalAdd, setOpenModalAdd] = useState(false);
 
-  const [newClient, setNewClient] = useState(initialClientTemplate);
+  const [newClient, setNewClient] = useState({
+    comunidad: "",
+    presidente: "",
+    direccion: "",
+    municipio: "",
+    servicios: [],
+    telefono_contacto: 0,
+    domicilio_presidente: "",
+  });
+  console.log("🚀 ~ CLientView ~ newClient:", newClient);
 
   return (
     <div style={styleClientView.mainContainer}>
       <div style={styleClientView.borderContainer}>
         <div style={styleClientView.marginContainer}>
           <div style={styleClientView.headerContainer}>
-            <span style={styleClientView.title(FONT_FAMILY)}>Comunidades</span>
-            <span style={styleClientView.addIcon(FONT_FAMILY)}>
+            <span style={styleClientView.title}>Comunidades</span>
+            <span style={styleClientView.addIcon}>
               Añadir
               <IconButton
                 color="secondary"
-                onClick={() => {
-                  setOpenModalAdd(true);
-                }}
+                onClick={() => setOpenModalAdd(true)}
               >
                 <AddCircleIcon fontSize="large" />
               </IconButton>
@@ -36,9 +42,7 @@ export default function CLientView() {
           </div>
         </div>
         <div style={styleClientView.tableContainer}>
-          <div style={styleClientView.tableSize}>
-            <ClientsTable columns={columns} data={clientsData} />
-          </div>
+          <ClientsTable columns={columns} clientsData={clientsData} />
         </div>
       </div>
       <AddModal
@@ -46,6 +50,9 @@ export default function CLientView() {
         setOpenModalAdd={setOpenModalAdd}
         setNewClient={setNewClient}
         addInputs={addInputs}
+        newClient={newClient}
+        createNewClient={() => createNewClient(newClient)}
+        clientsData={clientsData}
       />
     </div>
   );

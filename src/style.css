@@ -20,41 +20,77 @@
 }
 
 /* TABULATOR */
+.tabulator {
+  background: #f1feff !important;
+}
 
-/* Estilo de las celdas */
 .tabulator-table {
+  font-size: medium;
   background-color: #e5e1fd !important;
 }
 
 .tabulator-cell {
-  padding: 8px;
+  border-right: none !important;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-/* Estilo de las filas alternas */
-.tabulator-row.tabulator-row-odd {
-  background-color: #e9f5fa;
+.tabulator .tabulator-header {
+  position: sticky;
+  /* top: 0; */
 }
 
-/* Estilo del encabezado de la columna */
+.tabulator-row.tabulator-row {
+  background-color: #d3f6fa;
+}
+
+.tabulator-row.tabulator-row-odd {
+  background-color: #f1feff;
+}
 
 .tabulator-col {
   color: #525252;
+  border-right: none !important;
   font-weight: bold;
-  font-size: large;
+  font-size: medium;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.tabulator .tabulator-header .tabulator-col .tabulator-header-filter input {
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
 }
 
 .tabulator-col-content {
   background-color: #e5e1fd;
+  height: 60px;
 }
 
-.tabulator-header-filter {
-  background-color: #e5e1fd;
+.tabulator-col-resize-handle {
+  display: none !important;
 }
 
-.tabulator-row {
-  background-color: #e5e1fd;
+/* .tabulator-header-filter {
+  background: red;
+} */
+
+/* SCROLL BAR */
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #916e9b;
+}
+
+::-webkit-scrollbar {
+  width: 7px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #907ca3;
+  border-radius: 5px !important;
 }
