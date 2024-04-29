@@ -11,8 +11,3 @@ export const FONT_COLORS = {
   GREY: "#676667",
   LIGTH_GREY: "#898989",
 };
-
-export const appRoutes = {
-  HOME: "/",
-  CLIENTS: "clients",
-};

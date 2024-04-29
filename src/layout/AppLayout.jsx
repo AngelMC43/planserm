@@ -5,7 +5,7 @@ import { IconButton, Tooltip } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import rock from "../images/rock.png";
 import rock2 from "../images/rock2.png";
-import { appRoutes } from "../utils/utils";
+import { appRoutes } from "../router/utils";
 
 export const AppLayout = ({ children }) => {
   const location = useLocation();

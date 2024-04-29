@@ -1,7 +1,7 @@
 import useSWR, { mutate } from "swr";
 import { fetcher } from "../../api/utils/utils";
-import { appRoutes } from "../../utils/utils";
 import axios from "axios";
+import { appRoutes } from "../../router/utils";
 
 export function useGetClients() {
   const { data } = useSWR(`/api/${appRoutes.CLIENTS}`, fetcher);
@@ -11,7 +11,7 @@ export function useGetClients() {
 
 export async function createNewClient(body) {
   try {
-    await axios.post("/api/clients", body);
+    await axios.post(`/api/${appRoutes.CLIENTS}`, body);
     mutate(`/api/${appRoutes.CLIENTS}`);
   } catch (error) {
     console.error(error);

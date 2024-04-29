@@ -45,7 +45,17 @@ export default function AddModal({
     !!newClient.servicios;
 
   const handleAdd = async () => {
-    createNewClient(newClient), setOpenModalAdd(false);
+    createNewClient(newClient),
+      setOpenModalAdd(false),
+      setNewClient({
+        comunidad: "",
+        presidente: "",
+        direccion: "",
+        municipio: "",
+        servicios: [],
+        telefono_contacto: 0,
+        domicilio_presidente: "",
+      });
   };
 
   const ServicesOptions = ["Jardineria", "Garaje", "Piscina"];
