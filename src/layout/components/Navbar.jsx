@@ -1,10 +1,12 @@
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import logo from "../../images/logo-white-sin.png";
+import { useLocation } from "react-router-dom";
 
 const tabs = ["Servicios", "Presupuesto", "Contáctanos", "Sobre nosotros"];
 
 function ResponsiveAppBar() {
+  const location = useLocation();
   return (
     <div
       style={{

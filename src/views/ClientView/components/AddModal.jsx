@@ -68,14 +68,27 @@ export default function AddModal({
       aria-describedby="modal-modal-description"
     >
       <Box sx={boxMUIStyle}>
-        <Typography
-          id="modal-modal-title"
-          variant="h5"
-          component="h2"
-          style={{ fontFamily: FONT_FAMILY.MADIMI }}
+        <div
+          // TODO: hacer este fondo con este color para todos los headers pero poner degradiente con blanco
+          style={{
+            width: "auto",
+            height: "4vh",
+            backgroundColor: "#e1d1e0",
+            borderRadius: "10px 10px 10px 10px",
+          }}
         >
-          Añade una nueva comunidad
-        </Typography>
+          <Typography
+            id="modal-modal-title"
+            variant="h5"
+            component="h2"
+            style={{
+              fontFamily: FONT_FAMILY.MADIMI,
+              padding: "3px 0 0 10px",
+            }}
+          >
+            Añade una nueva comunidad
+          </Typography>
+        </div>
         {checkSimilarAdd && (
           <Alert
             sx={{ m: 2, transition: "transform 1.5s" }}

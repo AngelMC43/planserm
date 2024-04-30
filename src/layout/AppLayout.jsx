@@ -1,18 +1,20 @@
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Sidebar from "./components/SideBar";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { IconButton, Tooltip } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import rock from "../images/rock.png";
 import rock2 from "../images/rock2.png";
 import { appRoutes } from "../router/utils";
+import { NavbarAdmin } from "./components/NavbarAdmin";
 
 export const AppLayout = ({ children }) => {
   const location = useLocation();
 
   return (
     <>
-      {location.pathname === appRoutes.HOME && (
+      {location.pathname === appRoutes.HOME ? (
         <>
           <div style={{ height: "16vh" }}>
             <Navbar />
@@ -57,6 +59,11 @@ export const AppLayout = ({ children }) => {
               </Tooltip>
             </Link>
           </div>
+        </>
+      ) : (
+        <>
+          <NavbarAdmin />
+          <Sidebar />
         </>
       )}
 

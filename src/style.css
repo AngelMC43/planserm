@@ -41,11 +41,14 @@
 }
 
 .tabulator-row.tabulator-row {
-  background-color: #d3f6fa;
+  /* background-color: #d3f6fa; */
+  background-color: #fff;
+  border-bottom: 1px solid #dddddd;
 }
 
 .tabulator-row.tabulator-row-odd {
-  background-color: #f1feff;
+  /* background-color: #f1feff; */
+  /* background-color: #fff; */
 }
 
 .tabulator-col {
@@ -64,7 +67,7 @@
 }
 
 .tabulator-col-content {
-  background-color: #e5e1fd;
+  background-color: #e1d1e0;
   height: 60px;
 }
 
