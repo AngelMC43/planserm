@@ -1,5 +1,5 @@
 import { IconButton, Typography } from "@mui/material";
-import logo from "../../images/logo-sin.png";
+import logo from "../../images/purple-sin-solo.png";
 import { FONT_COLORS, FONT_FAMILY } from "../../utils/utils";
 import ExitToAppRoundedIcon from "@mui/icons-material/ExitToAppRounded";
 
@@ -13,12 +13,15 @@ export const NavbarAdmin = () => {
         border: "1px solid #b7b7b7",
         background: "#eadfe9",
         boxShadow: "4px 4px 4px  rgba(0, 0, 0, 0.2)",
-        borderRadius: "0 0 4vh 4vh",
+        borderRadius: "6vh 0 4vh 6vh",
         display: "flex",
         justifyContent: "space-between",
       }}
     >
-      <img src={logo} style={{ width: "5%", paddingLeft: "0.6%" }} />
+      <img
+        src={logo}
+        style={{ width: "5%", height: "90%", padding: "0.2% 0 0 0.4%" }}
+      />
       <span
         style={{
           display: "flex",

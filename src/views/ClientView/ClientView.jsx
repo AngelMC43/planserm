@@ -24,37 +24,35 @@ export default function CLientView() {
   });
 
   return (
-    <>
-      <div style={styleClientView.mainContainer}>
-        <div style={styleClientView.borderContainer}>
-          <div style={styleClientView.marginContainer}>
-            <div style={styleClientView.headerContainer}>
-              <span style={styleClientView.title}>Comunidades</span>
-              <span style={styleClientView.addIcon}>
-                Añadir
-                <IconButton
-                  color="secondary"
-                  onClick={() => setOpenModalAdd(true)}
-                >
-                  <AddCircleIcon fontSize="large" />
-                </IconButton>
-              </span>
-            </div>
-          </div>
-          <div style={styleClientView.tableContainer}>
-            <ClientsTable columns={columns} clientsData={clientsData} />
+    <div style={styleClientView.mainContainer}>
+      <div style={styleClientView.borderContainer}>
+        <div style={styleClientView.marginContainer}>
+          <div style={styleClientView.headerContainer}>
+            <span style={styleClientView.title}>Comunidades</span>
+            <span style={styleClientView.addIcon}>
+              Añadir
+              <IconButton
+                color="secondary"
+                onClick={() => setOpenModalAdd(true)}
+              >
+                <AddCircleIcon fontSize="large" />
+              </IconButton>
+            </span>
           </div>
         </div>
-        <AddModal
-          openModalAdd={openModalAdd}
-          setOpenModalAdd={setOpenModalAdd}
-          setNewClient={setNewClient}
-          addInputs={addInputs}
-          newClient={newClient}
-          createNewClient={() => createNewClient(newClient)}
-          clientsData={clientsData}
-        />
+        <div style={styleClientView.tableContainer}>
+          <ClientsTable columns={columns} clientsData={clientsData} />
+        </div>
       </div>
-    </>
+      <AddModal
+        openModalAdd={openModalAdd}
+        setOpenModalAdd={setOpenModalAdd}
+        setNewClient={setNewClient}
+        addInputs={addInputs}
+        newClient={newClient}
+        createNewClient={() => createNewClient(newClient)}
+        clientsData={clientsData}
+      />
+    </div>
   );
 }
